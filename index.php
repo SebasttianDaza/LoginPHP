@@ -27,14 +27,14 @@
         </article>
 
 
-        <form action="" method="POST" class="form">
+        <form action="Email/handleEmail.php" method="POST" enctype="multipart/form-data" class="form">
             <div class="control-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" required placeholder="Username o email">
+                <input type="email" name="email" id="email" required placeholder="Username o email" autocomplete="false">
             </div>
             <div class="control-group">
                 <label for=" password">Password</label>
-                <input type="password" name="password" id="password" required placeholder="Your password" autocomplete="">
+                <input type="password" name="password" id="password" required placeholder="Your password" autocomplete="false">
             </div>
             <div class="control-group">
                 <input type="submit" value="Log In">

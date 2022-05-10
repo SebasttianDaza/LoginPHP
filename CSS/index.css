@@ -20,16 +20,19 @@ img {
 
 .content {
     display: grid;
-    width: 70%;
+    width: 80%;
     height: 100%;
     margin: 0 auto;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
     justify-items: center;
+    overflow: clip;
+    grid-gap: 20px;
+    padding: 0 1rem;
 }
 
 .contentImage {
-    width: 50%;
+    width: 100%;
     height: auto;
 }
 
@@ -38,11 +41,14 @@ img {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+
 }
 
 .control-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .control-group label {
@@ -51,6 +57,22 @@ img {
     margin: 1rem 0;
 }
 
+.control-group input {
+    width: 100%;
+    height: 2rem;
+    margin: 1rem 0;
+}
+
+.control-group input[type=submit] {
+    width: 6rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: #1266F1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-family);
+}
 
 @media screen and (min-width: 900px) {
     .content {
