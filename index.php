@@ -33,7 +33,8 @@
                 <input type="password" name="password" id="password" required placeholder="Your password" autocomplete="false">
             </div>
             <div class="control-group">
-                <input type="submit" value="Log In">
+                <input type="submit" value="LogIn" name="Login">
+                <input type="submit" value="Register" name="Register">
             </div>
         </form>
     </section>

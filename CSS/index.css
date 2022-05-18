@@ -73,6 +73,17 @@ img {
     font-family: var(--font-family);
 }
 
+.control-group [type=button] {
+    width: 6rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: #1266F1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-family);
+}
+
 @media screen and (min-width: 900px) {
     .content {
         display: grid;
