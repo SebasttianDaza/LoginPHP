@@ -23,7 +23,7 @@
 
             } else {
 
-                $query = $connection->prepare("SELECT * FROM users WHERE email = :email");
+                $query = $connection->prepare("SELECT * FROM users WHERE email=:email");
                 $query->bindParam(':email', $email, PDO::PARAM_STR);
                 $query->execute();
 

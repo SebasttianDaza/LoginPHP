@@ -20,13 +20,24 @@
                 exit();
             } else {
                 //Check if the user exists
-                $query = $connection->prepare("SELECT * FROM users WHERE email = :email");
+                $query = $connection->prepare("SELECT * FROM users WHERE email=:email");
     
                 $query->bindParam(':email', $email, PDO::PARAM_STR);
                 $query->execute();
 
                 //Falta saber para que sirve fetch
                 $result = $query->fetch(PDO::FETCH_ASSOC);
+
+                if (!$result) {
+                    echo '<p class="error">The user does not exist!</p>';
+                } else {
+                    if(password_verify($password, $result['password'])){
+                        $_SESSION['user_id'] = $result['id'];
+                        echo '<p class="success">The user has been logged successfully!</p>';
+                    } else {
+                        echo '<p class="error">The password is incorrect!</p>';
+                    }
+                }
             }
     
         } else {
