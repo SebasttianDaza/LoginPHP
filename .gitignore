@@ -1,4 +1,8 @@
-/vendor
+vendor
+vendor/composer
+vendor/composer/symfony
+vendor/twig
+vendor/autoload.php
 
 
 /build/logs
