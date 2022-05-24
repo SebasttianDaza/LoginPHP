@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include_once '../loader.php';
     include_once './config.php';
     include_once './validate.php';
 
@@ -39,9 +40,31 @@
                     $result = $query->execute();
 
                     if ($result) {
-                        echo '<p class="success">The user has been registered successfully!</p>';
+                        echo renderViews(
+                            'success.html.twig',
+                            [
+                                'titlePage' => 'Success',
+                                'title' => 'You have successfully logged in!',
+                                'text' => 'You can now access the application.',
+                                'textBtn' => 'Log out',
+                                'urlImage' => '../Public/Image/success.png',
+                                'urlCss' => '../SRC/CSS/success.css'
+                            ],
+                            'template-base-html.html.twig'
+                        );
                     } else {
-                        echo '<p class="error">The user could not be registered!</p>';
+                        echo renderViews(
+                            'error.html.twig',
+                            [
+                                'titlePage' => 'Error Login',
+                                'title' => 'You have successfully logged in!',
+                                'text' => 'You can now access the application.',
+                                'textBtn' => 'Log out',
+                                'urlImage' => '../Public/Image/success.png',
+                                'urlCss' => '../SRC/CSS/error.css',
+                            ],
+                            "template-base-html.html.twig"
+                        );
                     }
                 }
             }

@@ -9,6 +9,7 @@
 
     $base = $twig->load('./Templates/template-base-html.html.twig');
 
-     echo $twig->render('index-default.html.twig', array('base' => $base, 'handle' => './Email/handleEmail.php'));
-
+    
+    echo $twig->render('index-default.html.twig', array('base' => $base, 'handle' => './Email/handleEmail.php'));
+    
 ?>

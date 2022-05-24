@@ -1,9 +1,12 @@
-<?php 
+<?php
     //Crear una session o renaudar la actual
     session_start();
+    include_once '../loader.php';
     include_once './config.php';
     include_once './validate.php';
-
+    
+    
+    
     $info = $_POST;
 
     if(isset($info['Login'])) {
@@ -31,11 +34,32 @@
                 if (!$result) {
                     echo '<p class="error">The user does not exist!</p>';
                 } else {
+
                     if(password_verify($password, $result['password'])){
                         $_SESSION['user_id'] = $result['id'];
-                        echo '<p class="success">The user has been logged successfully!</p>';
+                        echo renderViews('success.html.twig', 
+                            [
+                                'titlePage' => 'Success',
+                                'title' => 'You have successfully logged in!',
+                                'text' => 'You can now access the application.',
+                                'textBtn' => 'Log out',
+                                'urlImage' => '../Public/Image/success.png',
+                                'urlCss' => '../SRC/CSS/success.css'
+                            ] , 
+                            'template-base-html.html.twig'
+                        );
                     } else {
-                        echo '<p class="error">The password is incorrect!</p>';
+                        echo renderViews('error.html.twig', 
+                            [
+                                'titlePage' => 'Error Login',
+                                'title' => 'You have successfully logged in!',
+                                'text' => 'You can now access the application.',
+                                'textBtn' => 'Log out',
+                                'urlImage' => '../Public/Image/success.png',
+                                'urlCss' => '../SRC/CSS/error.css',
+                            ],
+                            "template-base-html.html.twig"
+                        );
                     }
                 }
             }
