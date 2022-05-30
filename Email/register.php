@@ -1,10 +1,15 @@
 <?php 
-    session_start();
-    include_once '../loader.php';
     include_once './config.php';
-    include_once './validate.php';
 
+    function validate($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+    
     if (isset($_POST['Register'])) {
+        session_start();
         $info = $_POST;
         
         if(isset($info['email']) && isset($info['password'])){
@@ -14,12 +19,12 @@
 
             if (empty($email)) {
 
-                header('Location: index.php?error=emptyUser name es required');
+                header('Location: ../index.php?error=emptyUser name es required');
                 exit();
 
             } else if (empty($password)) {
                 
-                header('Location: index.php?error=emptyPassword es required');
+                header('Location: ../index.php?error=emptyPassword es required');
                 exit();
 
             } else {
@@ -40,31 +45,9 @@
                     $result = $query->execute();
 
                     if ($result) {
-                        echo renderViews(
-                            'success.html.twig',
-                            [
-                                'titlePage' => 'Success',
-                                'title' => 'You have successfully logged in!',
-                                'text' => 'You can now access the application.',
-                                'textBtn' => 'Log out',
-                                'urlImage' => '../Public/Image/success.png',
-                                'urlCss' => '../SRC/CSS/success.css'
-                            ],
-                            'template-base-html.html.twig'
-                        );
+                        header('Location: ../Pages/home.php?message=successregister');
                     } else {
-                        echo renderViews(
-                            'error.html.twig',
-                            [
-                                'titlePage' => 'Error Login',
-                                'title' => 'You have successfully logged in!',
-                                'text' => 'You can now access the application.',
-                                'textBtn' => 'Log out',
-                                'urlImage' => '../Public/Image/success.png',
-                                'urlCss' => '../SRC/CSS/error.css',
-                            ],
-                            "template-base-html.html.twig"
-                        );
+                        header('Location: ../Pages/home.php?message=errorregister');
                     }
                 }
             }
