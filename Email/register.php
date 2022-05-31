@@ -9,7 +9,6 @@
     }
     
     if (isset($_POST['Register'])) {
-        session_start();
         $info = $_POST;
         
         if(isset($info['email']) && isset($info['password'])){
@@ -45,9 +44,9 @@
                     $result = $query->execute();
 
                     if ($result) {
-                        header('Location: ../Pages/home.php?message=successregister');
+                        header('Location: ../Pages/registerLogin.php?message=successregister');
                     } else {
-                        header('Location: ../Pages/home.php?message=errorregister');
+                        header('Location: ../Pages/registerLogin.php?message=errorregister');
                     }
                 }
             }

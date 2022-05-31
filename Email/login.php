@@ -31,6 +31,7 @@
 
             if (password_verify($password, $passwordHash)) {
                 $_SESSION['user'] = $user['id'];
+                $_SESSION['authenticated'] = true;
 
                 header('Location: ../Pages/home.php?message=successlogin');
             } else {
