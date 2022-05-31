@@ -1,8 +1,14 @@
 <?php 
     include '../loader.php';
+    session_start();
+    
+    if(!$_SESSION["authenticated"]) {
+        header('Location: ../index.php?message=authenticatedfalse');
+    }
 
     if ($_GET["message"] == "successlogin") {
-        $nameUser = $_SESSION['user'];
+
+        $nameUser = $_SESSION['name'];
         echo renderViews(
             'success.html.twig', 
             [
@@ -13,11 +19,10 @@
                 'urlImage' => '../Public/Image/success.png',
                 'urlCss' => '../SRC/CSS/success.css',
                 'idBtn' => 'getoutlogin',
-                'urlJS' => '../SRC/index.js',
+                'urlJS' => '../SRC/JS/index.js',
             ] , 
             'template-base-html.html.twig'
         );
-        
     }
 
     if($_GET["message"] == "errorlogin") {
@@ -31,7 +36,7 @@
                 'urlImage' => '../Public/Image/success.png',
                 'urlCss' => '../SRC/CSS/error.css',
                 'idBtn' => 'getoutindex',
-                'urlJS' => '../SRC/index.js',
+                'urlJS' => '../SRC/JS/index.js',
             ],
             "template-base-html.html.twig"
         );

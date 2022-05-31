@@ -12,7 +12,7 @@
                 'urlImage' => '../Public/Image/success.png',
                 'urlCss' => '../SRC/CSS/success.css',
                 'idBtn' => 'getinlogin',
-                'urlJS' => '../SRC/index.js',
+                'urlJS' => '../SRC/JS/index.js',
             ],
             'template-base-html.html.twig'
         );
@@ -30,7 +30,7 @@
                 'urlImage' => '../Public/Image/success.png',
                 'urlCss' => '../SRC/CSS/error.css',
                 'idBtn' => 'getoutindex',
-                'urlJS' => '../SRC/index.js',
+                'urlJS' => '../SRC/JS/index.js',
             ],
             "template-base-html.html.twig"
         );

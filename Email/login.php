@@ -1,6 +1,7 @@
 <?php
 
     include_once './config.php';
+    session_start();
 
     function validate($data) {
         //Quitar espacios en blanco
@@ -24,13 +25,13 @@
         $query->execute();
 
         if ($query->rowCount() > 0) {
-            session_start();
             
             $user = $query->fetch(PDO::FETCH_ASSOC);
             $passwordHash = password_hash(validate($user['password']), PASSWORD_DEFAULT);
 
             if (password_verify($password, $passwordHash)) {
                 $_SESSION['user'] = $user['id'];
+                $_SESSION['name'] = $user['email'];
                 $_SESSION['authenticated'] = true;
 
                 header('Location: ../Pages/home.php?message=successlogin');
