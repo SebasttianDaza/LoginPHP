@@ -12,5 +12,6 @@
     
     echo $twig->render('index-default.html.twig', 
     array('base' => $base, 'handle' => './Email/handleEmail.php'));
+
     
 ?>
