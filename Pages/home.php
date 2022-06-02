@@ -1,5 +1,6 @@
 <?php 
     include '../loader.php';
+    include_once '../SRC/JS/Data.php';
     session_start();
     
     if(!$_SESSION["authenticated"]) {
@@ -23,6 +24,10 @@
             ] , 
             'template-base-html.html.twig'
         );
+        $json = json_encode($nameUser);
+        if(!isset($nameUser)) {
+            echo "<script>console.log($json)</script>";
+        }
     }
 
     if($_GET["message"] == "errorlogin") {

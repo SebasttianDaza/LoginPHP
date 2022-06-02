@@ -1,9 +1,9 @@
 <?php 
-    $data = array(
-        'status' => true,
-        'urlPage' => 'index.php',
-    );
+    header('Access-Control-Allow-Origin: *');
 
-    echo json_encode($data);
+    $nameUser;
 
+    if(isset($_SESSION['session'])) {
+        $nameUser = $_SESSION['session'];
+    }
 ?>
