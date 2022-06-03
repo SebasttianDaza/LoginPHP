@@ -1,9 +1,7 @@
 <?php 
     header('Access-Control-Allow-Origin: *');
 
-    $nameUser;
-
-    if(isset($_SESSION['session'])) {
-        $nameUser = $_SESSION['session'];
+    if(!isset($_GET['remove'])) {
+        echo $_GET['remove'];
     }
 ?>
