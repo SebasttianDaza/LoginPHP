@@ -29,7 +29,7 @@
                 'textBtn' => 'Log out',
                 'urlImage' => '../Public/Image/success.png',
                 'urlCss' => '../SRC/CSS/error.css',
-                'idBtn' => 'getoutindex',
+                'idBtn' => 'getoutindexregister',
                 'urlJS' => '../SRC/JS/index.js',
             ],
             "template-base-html.html.twig"
