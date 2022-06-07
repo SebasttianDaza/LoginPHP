@@ -32,7 +32,7 @@
 
 ## Overview
 
-![screenshot](/public/assest/image/imageRbdomQuo.png)
+![screenshot](./Public/Image/imageLogin.png)
 
 Website developed with PHP, Twig, JavaScript and MySQL, a little application that allows you to login and register. Handle to render of the views with Twig.
 
