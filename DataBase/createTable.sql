@@ -5,3 +5,5 @@ CREATE TABLE `users` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `email` (`email`)
 );
+
+ENGINE=InnoDB DEFAULT CHARSET=utf8;
