@@ -4,11 +4,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{https://buy-nft-dashboard.vercel.app/}">
+    <a href="https://{https://loginphp7.herokuapp.com/}">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{[Repo](https://github.com/SebasttianDaza/buyNftDashboard)}">
+    <a href="https://{[Repo](https://github.com/SebasttianDaza/LoginPHP)}">
       Solution
     </a>
     <span> | </span>
@@ -34,21 +34,17 @@
 
 ![screenshot](/public/assest/image/imageRbdomQuo.png)
 
-Website developed with ReactJS, React-Boostrap, Bootstrap, and that does request a API to get a random quote, also it can download a image with quote. I've allowed to learn more about how handle the API, a component loading, and a component error.
+Website developed with PHP, Twig, JavaScript and MySQL, a little application that allows you to login and register. Handle to render of the views with Twig.
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- [React](https://reactjs.org/)
-- [CSS](https://vuejs.org/)
-- [Vercel](https://tailwindcss.com/)
-- [React Icons](https://react-icons.netlify.com/)
-- [Vite](https://vitejs.dev/)
-- [React-Bootstrap](https://react-bootstrap.github.io/)
-- [Bootstrap](https://getbootstrap.com/)
-- [API Quote Garden](https://pprathameshmore.github.io/QuoteGarden/)
-- [html2canvas](https://html2canvas.hertzen.com/)
+- [PHP](https://www.php.net/)
+- [Twig](https://twig.symfony.com/)
+- [MySQL](https://www.mysql.com/)
+- [JavaScript](https://www.javascript.com/)
+- [Composer](https://getcomposer.org/)
 
 
 ## How To Use
@@ -63,9 +59,9 @@ $ git clone https://github.com/your-user-name/your-project-name
 
 # Install dependencies
 $ npm install
+$ composer install
 
-# Run the app
-$ npm run dev
+# Run the app, you can use nginx or apache
 ```
 
 ## Contact

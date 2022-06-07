@@ -9,7 +9,12 @@
         //Crear una tabla
         $sql = file_get_contents('../DataBase/createTable.sql');
 
-        $connection->exec($sql);
+        //Validar si la tabla existe
+       if($connection->query($sql)){
+            $connection->query($sql);
+        } else{
+            echo "<script>console.log('Table already exists')</script>";
+        }
 
     } catch (PDOException $e) {
         echo 'Error: ' . $e->getMessage();
