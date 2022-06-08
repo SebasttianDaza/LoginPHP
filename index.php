@@ -1,4 +1,5 @@
 <?php
+    error_reporting(E_ERROR);
     require_once './vendor/autoload.php';
 
     $loader = new \Twig\Loader\FilesystemLoader('./views');
@@ -21,7 +22,6 @@
     
     echo $twig->render('index-default.html.twig', 
     array('base' => $base, 'handle' => './Email/handleEmail.php'));
-
 
     
 ?>

@@ -1,5 +1,7 @@
 <?php 
     include_once './config.php';
+    include_once './sendEmail.php';
+
 
     function validate($data) {
         $data = trim($data);
@@ -41,10 +43,15 @@
                     //Vincular los parametros con los valores
                     $query->bindParam(':email', $email, PDO::PARAM_STR);
                     $query->bindParam(':password', $password, PDO::PARAM_STR);
-                    $result = $query->execute();
-
-                    if ($result) {
-                        header('Location: ../Pages/registerLogin.php?message=successregister');
+                    
+                    if(sendEmail($email, $email)) {
+                        $result = $query->execute();
+                        sendEmail($email, $email);
+                        if($result) {
+                            header('Location: ../Pages/registerLogin.php?message=successregister');
+                        } else {
+                            header('Location: ../Pages/registerLogin.php?message=errorregister');
+                        }
                     } else {
                         header('Location: ../Pages/registerLogin.php?message=errorregister');
                     }
