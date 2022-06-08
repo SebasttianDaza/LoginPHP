@@ -6,15 +6,6 @@
     try {
         $connection = new PDO('mysql:host='.HOST.';dbname='. DATABASE, USER, PASSWORD);
         echo "<script>console.log('Connected successfully')</script>";
-        //Crear una tabla
-        $sql = file_get_contents('../DataBase/createTable.sql');
-
-        //Validar si la tabla existe
-       if($connection->query($sql)){
-            return; 
-        } else{
-            $connection->query($sql);
-        }
 
     } catch (PDOException $e) {
         echo 'Error: ' . $e->getMessage();
