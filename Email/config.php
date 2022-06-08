@@ -11,9 +11,9 @@
 
         //Validar si la tabla existe
        if($connection->query($sql)){
-            $connection->query($sql);
+            return; 
         } else{
-            echo "<script>console.log('Table already exists')</script>";
+            $connection->query($sql);
         }
 
     } catch (PDOException $e) {
